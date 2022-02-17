@@ -20,6 +20,12 @@ return new class extends Migration
             $table->string('telephone');
             $table->string('email');
         });
+        Schema::table('lessons', function (Blueprint $table){
+            $table->unsignedBigInteger('lesson_id')->nullable()->after('id');
+            $table  ->foreign('lesson_id')
+                    ->references('id')
+                    ->on('lessons');
+        });
     }
 
     /**
