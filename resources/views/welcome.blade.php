@@ -1,4 +1,4 @@
 @extends('layoutbody.master')
 @section('content')
-    <h1>Welcome</h1>
+    <h1>Bienvenido a inicio donde aqui visualzaras tu clase</h1>
 @endsection
