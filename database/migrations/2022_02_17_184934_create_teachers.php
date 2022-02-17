@@ -21,10 +21,12 @@ return new class extends Migration
             $table->string('email');
         });
         Schema::table('lessons', function (Blueprint $table){
-            $table->unsignedBigInteger('lesson_id')->nullable()->after('id');
-            $table  ->foreign('lesson_id')
+            $table->unsignedBigInteger('teachers_id')->nullable()->after('id');
+            $table  ->foreign('teachers_id')
                     ->references('id')
-                    ->on('lessons');
+                    ->on('teachers')
+                    ->onUpdate('cascade')
+                    ->onDelete('set null');
         });
     }
 
@@ -35,6 +37,11 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::table('lessons', function (Blueprint $table){
+            $table->dropForeign('lessons_teachers_id_foreign');
+            $table->dropColumn('teachers_id');
+        });
+
         Schema::dropIfExists('teachers');
     }
 };
