@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('office');
-            $table->string('telephone');
-            $table->string('email');
+            $table->string('nombre');
+            $table->string('materias');
+            $table->string('Gra y gup asig');
         });
-        Schema::table('lessons', function (Blueprint $table){
+        Schema::table('courses', function (Blueprint $table){
             $table->unsignedBigInteger('teachers_id')->nullable()->after('id');
             $table  ->foreign('teachers_id')
                     ->references('id')
@@ -37,11 +36,10 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('lessons', function (Blueprint $table){
-            $table->dropForeign('lessons_teachers_id_foreign');
+        Schema::table('courses', function (Blueprint $table){
+            $table->dropForeign('courses_teachers_id_foreign');
             $table->dropColumn('teachers_id');
         });
-
         Schema::dropIfExists('teachers');
     }
 };
