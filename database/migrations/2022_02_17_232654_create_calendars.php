@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('calendars', function (Blueprint $table) {
             $table->id();
-            $table->string('dia');
-            $table->string('mes');
-            $table->string('actividad');
+            $table->string('title');
+            $table->dateTime('start');
+            $table->dateTime('end');
         });
     }
     /**
