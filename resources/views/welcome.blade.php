@@ -4,7 +4,6 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi error suscipit asperiores ad labore! Aperiam dolores maiores, in quia, eius accusamus nihil perspiciatis sed, pariatur aut a itaque natus. Aspernatur!</p>
     <div class="container">
         <br />
-        <h1 class="text-center text-primary"><u>How to Use Fullcalendar in Laravel 8</u></h1>
         <br />
         <div id="calendar"></div>
     </div>

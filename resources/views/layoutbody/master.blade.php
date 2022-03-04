@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>How to Use Fullcalendar in Laravel 8</title>
+        <title></title>
         
         <meta name="csrf-token" content="{{ csrf_token() }}" />
 
